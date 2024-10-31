@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import "reset.css";
+
+body {
+    background-color: mintcream;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Ca nous permet de mettre un espace entre les deux liens
+ et de mettre de l'espace autour (margin) */
+nav {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Ca nous permet d'afficher tout le contenu de manière
+centrée et d'afficher les articles en ligne et non en colonne */
+#blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+/* Cela permet de faire en sorte que les articles uniquement prennent
+50% de la place sur la page web en étant centré */
+#blog article {
+    width: 50%;
+    margin-top: 2rem;
+}
+
+/* Tant que la taille du navigateur est inférieure à 1024px
+on fait en sorte que les articles prennent 85% de la largeur */
+@media (max-width: 1024px){
+    #blog article {
+        width: 85%;
+    }
+}
+
+.post-title {
+    display: flex;
+    align-items: center;
+}
+
+.post-title a {
+    color: steelblue;
+    text-decoration: none;
+    margin-left: .5rem;
+}
+
+/* Ca nous permet de récupérer le dernier lien <a> dans
+ la classe post-title qui est le lien pour "Supprimer" */
+.post-title a:last-child {
+    color: red;
+}
+
+/* Le signe ">" permet de viser le "div" enfant direct
+ de la classe post-title et pas les sous-enfants "div" */
+.post-title > div {
+    margin-left: auto;
+}
+
+.post-author {
+    margin: .5rem 0;
+}
+
+.post-excerpt {
+    margin-bottom: 1rem;
+}
+
+.post-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-detail > h1 {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+input, textarea {
+    display: block;
+    padding: .75rem;
+    /* Rajout d'espace entre les lignes */
+    line-height: 1.5;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    min-width: 600px;
+}
+
+/* On met les 2 1ères propriétés afin de rajouter
+une bordure à un label qui n'en n'a pas de base.
+ De cette manière on peut appliquer un margin à un
+ label. */
+label {
+    display: inline-block;
+    box-sizing: border-box;
+    /*  1 en haut et en bas, 0 à droite et à gauche */
+    margin: 1rem 0;
+}
+
+.btn {
+    padding: 1rem;
+    border: none;
+    font-weight: 600;
+    font-size: 1.25rem;
+    border-radius: .3rem;
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background-color: steelblue;
+}
+
+.btn-delete {
+    background-color: indianred;
+}
